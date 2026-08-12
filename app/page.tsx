@@ -8,6 +8,12 @@ const instagramLink =
 
 const services = [
   {
+    name: "Fio a fio",
+    price: "R$ 100",
+    image: "/images/modelo3-atual.jpeg",
+    description: "Naturalidade e elegância para realçar o seu olhar.",
+  },
+  {
     name: "Volume brasileiro",
     price: "R$ 110",
     image: "/images/modelo2-atual.jpeg",
@@ -18,12 +24,6 @@ const services = [
     price: "R$ 120",
     image: "/images/modelo1-atual.jpeg",
     description: "Volume sofisticado, intenso e perfeitamente alinhado.",
-  },
-  {
-    name: "Fio a fio",
-    price: "R$ 100",
-    image: "/images/modelo3-atual.jpeg",
-    description: "Naturalidade e elegância para realçar o seu olhar.",
   },
 ];
 
