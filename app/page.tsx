@@ -1,7 +1,10 @@
 import Image from "next/image";
 
 const whatsappLink =
-  "https://wa.me/?text=Ol%C3%A1%2C%20Geovanna!%20Gostaria%20de%20agendar%20meu%20hor%C3%A1rio%20para%20extens%C3%A3o%20de%20c%C3%ADlios.";
+  "https://wa.me/5511992124482?text=Ol%C3%A1%2C%20Geovanna!%20Gostaria%20de%20agendar%20meu%20hor%C3%A1rio%20para%20extens%C3%A3o%20de%20c%C3%ADlios.";
+
+const instagramLink =
+  "https://www.instagram.com/geovannanog.lash?igsh=cms5bzdpa2Z4bnpn";
 
 const services = [
   {
@@ -40,13 +43,25 @@ function Sparkle({ className = "" }: { className?: string }) {
   );
 }
 
+function ContactIcon({ type }: { type: "whatsapp" | "instagram" | "location" }) {
+  if (type === "whatsapp") return (
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.6Z"/><path d="M8.2 7.6c.3-.5.6-.5.9-.5h.4c.2 0 .4.1.5.5l.8 1.9c.1.3.1.5-.1.7l-.6.8c-.2.2-.2.4 0 .7.7 1.3 1.8 2.3 3.2 2.9.3.1.5.1.7-.1l.9-1.1c.2-.2.4-.3.7-.2l1.9.9c.3.2.5.3.5.5 0 .2-.1 1.3-.8 1.9-.6.6-1.5.9-2.4.7-1-.2-2.5-.7-4.3-2.3-1.5-1.3-2.5-3-2.8-4-.3-1-.1-2.3.5-3.3Z"/></svg>
+  );
+  if (type === "instagram") return (
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+  );
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.7"/></svg>
+  );
+}
+
 export default function Home() {
   return (
     <main>
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Geovanna Lash Designer — início">
-          <span>GEOVANNA</span>
-          <small>LASH DESIGNER</small>
+          <Image className="brand-logo" src="/logo-gn.svg" alt="GN Lash Designer" width={62} height={62} />
+          <span className="brand-name">GEOVANNA</span>
         </a>
         <nav aria-label="Navegação principal">
           <a href="#sobre">Sobre</a>
@@ -69,7 +84,7 @@ export default function Home() {
             <a className="button button-pink" href={whatsappLink} target="_blank" rel="noreferrer">
               Quero agendar <ArrowIcon />
             </a>
-            <a className="text-link" href="#servicos">Conheça as técnicas <span>↘</span></a>
+            <a className="text-link" href="#servicos">Conheça as técnicas <ArrowIcon /></a>
           </div>
           <div className="hero-detail">
             <span>01</span><i /><p>Realce o que<br />já é único em você</p>
@@ -115,7 +130,7 @@ export default function Home() {
       <section className="about" id="sobre">
         <div className="about-photo">
           <Image src="/images/dona_foto_1.jpeg" alt="Geovanna em seu espaço de atendimento" fill sizes="(max-width: 800px) 100vw, 46vw" />
-          <div className="about-stamp"><span>G</span><small>BEAUTY • CARE • CONFIDENCE</small></div>
+          <div className="about-stamp"><Image src="/logo-gn.svg" alt="GN Lash Designer" fill sizes="120px" /></div>
         </div>
         <div className="about-copy">
           <p className="eyebrow"><span /> Muito prazer</p>
@@ -153,10 +168,42 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="contact" id="contato">
+        <div className="contact-copy">
+          <p className="eyebrow dark"><span /> Onde me encontrar</p>
+          <h2>Vamos cuidar do<br />seu <em>olhar?</em></h2>
+          <div className="contact-links">
+            <a href={whatsappLink} target="_blank" rel="noreferrer">
+              <div className="contact-icon"><ContactIcon type="whatsapp" /></div><div><small>WhatsApp</small><strong>+55 11 99212-4482</strong></div><ArrowIcon />
+            </a>
+            <a href={instagramLink} target="_blank" rel="noreferrer">
+              <div className="contact-icon"><ContactIcon type="instagram" /></div><div><small>Instagram</small><strong>@geovannanog.lash</strong></div><ArrowIcon />
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua%20Francisco%20Rouco%20Vidal%2C%2047%20-%20Vila%20Viotto%2C%20Jundia%C3%AD%20-%20SP" target="_blank" rel="noreferrer">
+              <div className="contact-icon"><ContactIcon type="location" /></div><div><small>Localização</small><strong>Rua Francisco Rouco Vidal, 47<br />Vila Viotto — Jundiaí, SP</strong></div><ArrowIcon />
+            </a>
+          </div>
+        </div>
+        <div className="contact-map">
+          <iframe
+            title="Mapa de Jundiaí, São Paulo"
+            src="https://www.google.com/maps?q=Rua%20Francisco%20Rouco%20Vidal%2C%2047%20-%20Vila%20Viotto%2C%20Jundia%C3%AD%20-%20SP&output=embed"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <div className="map-pin" aria-hidden="true"><i /><b>47</b></div>
+          <span>Vila Viotto — Jundiaí</span>
+        </div>
+      </section>
+
       <footer>
-        <a className="brand footer-brand" href="#inicio"><span>GEOVANNA</span><small>LASH DESIGNER</small></a>
+        <a className="brand footer-brand" href="#inicio"><Image className="brand-logo" src="/logo-gn.svg" alt="GN Lash Designer" width={68} height={68} /><span className="brand-name">GEOVANNA</span></a>
         <p>Beleza, confiança e cuidado em cada detalhe.</p>
-        <a href="#inicio" className="back-top">Voltar ao topo ↑</a>
+        <div className="footer-end">
+          <a href="#inicio" className="back-top">Voltar ao topo ↑</a>
+          <small>Feito por MJXC Soluções em TI</small>
+        </div>
       </footer>
     </main>
   );

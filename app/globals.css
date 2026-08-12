@@ -42,14 +42,16 @@ svg {
 }
 .brand {
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  gap: 12px;
   letter-spacing: 0.22em;
   line-height: 1;
 }
-.brand span {
+.brand-logo { width:56px; height:56px; object-fit:contain; }
+.brand .brand-name {
   font-family: var(--font-display), serif;
-  font-size: 25px;
+  font-size: 23px;
   letter-spacing: 0.12em;
 }
 .brand small {
@@ -207,9 +209,9 @@ em {
   background: var(--pink);
   transform: translateY(-2px);
 }
-.text-link span {
-  color: var(--pink);
-  margin-left: 10px;
+.text-link svg {
+  width: 18px;
+  flex: 0 0 auto;
 }
 .hero-detail {
   display: flex;
@@ -457,20 +459,10 @@ em {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: var(--pink);
-  display: grid;
-  place-items: center;
-  text-align: center;
+  background: transparent;
+  filter: drop-shadow(0 10px 24px #0005);
 }
-.about-stamp span {
-  font-family: var(--font-display);
-  font-size: 53px;
-  line-height: 0.6;
-}
-.about-stamp small {
-  font-size: 6px;
-  letter-spacing: 0.15em;
-}
+.about-stamp img { object-fit:contain; }
 .about-copy {
   padding: 105px 9vw 90px 8vw;
 }
@@ -613,6 +605,24 @@ blockquote {
   right: 8%;
   top: 18%;
 }
+.contact { display:grid; grid-template-columns:1fr 1fr; min-height:610px; background:#fffaf8; }
+.contact-copy { padding:90px clamp(28px,7vw,110px); display:flex; flex-direction:column; justify-content:center; }
+.contact-copy h2 { margin:22px 0 38px; }
+.contact-links { border-top:1px solid #e4dadd; }
+.contact-links a { display:grid; grid-template-columns:52px 1fr 24px; align-items:center; gap:18px; padding:21px 0; border-bottom:1px solid #e4dadd; transition:color .2s; }
+.contact-links a:hover { color:var(--pink); }
+.contact-links a > div:nth-child(2) { display:flex; flex-direction:column; gap:4px; }
+.contact-icon { width:46px; height:46px; border:1.5px solid var(--pink); border-radius:50%; display:grid; place-items:center; color:var(--pink); transition:background .2s,color .2s; }
+.contact-icon svg { width:21px; height:21px; }
+.contact-links a:hover .contact-icon { background:var(--pink); color:white; }
+.contact-links small { font-family:var(--font-sans),sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.13em; color:var(--pink); }
+.contact-links strong { display:block; font-family:var(--font-display),serif; font-size:24px; font-weight:600; }
+.contact-map { position:relative; min-height:610px; background:#eadfe2; overflow:hidden; }
+.contact-map iframe { position:absolute; inset:0; width:100%; height:100%; border:0; filter:grayscale(1) sepia(.16) hue-rotate(285deg) saturate(.75); }
+.map-pin { position:absolute; z-index:2; left:50%; top:50%; transform:translate(-50%,-100%); width:54px; height:54px; border-radius:50% 50% 50% 5px; rotate:-45deg; background:var(--pink); border:4px solid white; box-shadow:0 8px 25px #1116; display:grid; place-items:center; pointer-events:none; }
+.map-pin i { position:absolute; inset:8px; border-radius:50%; background:white; }
+.map-pin b { position:relative; z-index:1; rotate:45deg; color:var(--pink); font-family:var(--font-sans),sans-serif; font-size:13px; }
+.contact-map span { position:absolute; left:0; bottom:35px; padding:15px 22px; background:var(--pink); color:white; font-family:var(--font-display),serif; font-size:20px; }
 footer {
   background: var(--ink);
   color: white;
@@ -621,6 +631,8 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
+.footer-end { display:flex; flex-direction:column; align-items:flex-end; gap:13px; }
+.footer-end small { color:#777174; font-size:11px; }
 .footer-brand {
   color: white;
 }
@@ -720,6 +732,8 @@ footer > p {
   .experience {
     grid-template-columns: 1fr;
   }
+  .contact { grid-template-columns:1fr; }
+  .contact-map { min-height:480px; }
 }
 @media (max-width: 600px) {
   .brand span {
@@ -790,6 +804,11 @@ footer > p {
     gap: 25px;
     text-align: center;
   }
+  .footer-end { align-items:center; }
+  .contact-copy { padding:75px 20px; }
+  .contact-links a { grid-template-columns:46px 1fr 22px; gap:13px; }
+  .contact-links strong { font-size:22px; }
+  .contact-map { min-height:400px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html {

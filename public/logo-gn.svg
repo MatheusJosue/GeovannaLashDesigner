@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">GN Lash Designer</title>
+  <desc id="desc">Monograma GN em um círculo rosa com detalhe de olho e cílios.</desc>
+  <circle cx="120" cy="120" r="112" fill="#f45693" stroke="#111012" stroke-width="8"/>
+  <circle cx="120" cy="120" r="99" fill="none" stroke="#111012" stroke-width="1.8" opacity=".55"/>
+  <path d="M58 91c17-21 40-31 62-31 25 0 47 10 64 31-18-10-39-15-64-15-24 0-44 5-62 15Z" fill="#fff9f7" opacity=".2"/>
+  <text x="120" y="145" text-anchor="middle" fill="#111012" font-family="Georgia, 'Times New Roman', serif" font-size="90" font-weight="600" letter-spacing="-11">GN</text>
+  <path d="M66 164c16 13 34 19 54 19 21 0 40-6 56-20-15 6-34 9-56 9-21 0-39-3-54-8Z" fill="none" stroke="#111012" stroke-width="3.8" stroke-linecap="round"/>
+  <path d="M78 166l-8 10M89 170l-6 13M101 173l-3 13M113 174v14M126 174l2 14M139 172l5 13M151 168l8 12M162 164l10 9" fill="none" stroke="#111012" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="120" cy="178" r="4" fill="#111012"/>
+  <path d="M77 202h86" stroke="#111012" stroke-width="1.5"/>
+  <text x="120" y="217" text-anchor="middle" fill="#111012" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="4">LASH DESIGNER</text>
+</svg>
