@@ -60,8 +60,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Geovanna Lash Designer — início">
-          <Image className="brand-logo" src="/logo-gn.svg" alt="GN Lash Designer" width={62} height={62} />
-          <span className="brand-name">GEOVANNA</span>
+          <Image className="brand-logo" src="/images/logocerta.jpeg" alt="Geovanna Nogueira Lash Design" width={76} height={76} priority />
         </a>
         <nav aria-label="Navegação principal">
           <a href="#sobre">Sobre</a>
@@ -130,7 +129,7 @@ export default function Home() {
       <section className="about" id="sobre">
         <div className="about-photo">
           <Image src="/images/dona_foto_1.jpeg" alt="Geovanna em seu espaço de atendimento" fill sizes="(max-width: 800px) 100vw, 46vw" />
-          <div className="about-stamp"><Image src="/logo-gn.svg" alt="GN Lash Designer" fill sizes="120px" /></div>
+          <div className="about-stamp"><Image src="/images/logocerta.jpeg" alt="Geovanna Nogueira Lash Design" fill sizes="120px" /></div>
         </div>
         <div className="about-copy">
           <p className="eyebrow"><span /> Muito prazer</p>
@@ -198,7 +197,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand footer-brand" href="#inicio"><Image className="brand-logo" src="/logo-gn.svg" alt="GN Lash Designer" width={68} height={68} /><span className="brand-name">GEOVANNA</span></a>
+        <a className="brand footer-brand" href="#inicio"><Image className="brand-logo" src="/images/logocerta.jpeg" alt="Geovanna Nogueira Lash Design" width={84} height={84} /></a>
         <p>Beleza, confiança e cuidado em cada detalhe.</p>
         <div className="footer-end">
           <a href="#inicio" className="back-top">Voltar ao topo ↑</a>

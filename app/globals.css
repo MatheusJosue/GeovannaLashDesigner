@@ -48,7 +48,14 @@ svg {
   letter-spacing: 0.22em;
   line-height: 1;
 }
-.brand-logo { width:56px; height:56px; object-fit:contain; }
+.brand-logo {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  transform: scale(1.16);
+}
 .brand .brand-name {
   font-family: var(--font-display), serif;
   font-size: 23px;
@@ -459,10 +466,15 @@ em {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  overflow: hidden;
   background: transparent;
   filter: drop-shadow(0 10px 24px #0005);
 }
-.about-stamp img { object-fit:contain; }
+.about-stamp img {
+  object-fit: cover;
+  clip-path: circle(50% at 50% 50%);
+  transform: scale(1.16);
+}
 .about-copy {
   padding: 105px 9vw 90px 8vw;
 }
@@ -632,6 +644,7 @@ footer {
   justify-content: space-between;
 }
 .footer-end { display:flex; flex-direction:column; align-items:flex-end; gap:13px; }
+.footer-brand .brand-logo { width:84px; height:84px; }
 .footer-end small { color:#777174; font-size:11px; }
 .footer-brand {
   color: white;
